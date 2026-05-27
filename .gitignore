@@ -1,0 +1,17 @@
+# 二进制产物
+/bin/
+*.exe
+*.out
+
+# 测试与覆盖率
+*.test
+coverage.out
+
+# 本地环境与密钥（重要：别把 API key 传上去）
+.env
+*.local
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
