@@ -1,0 +1,42 @@
+{
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.formatTool": "goimports",
+  "go.testFlags": ["-v", "-race"],
+  "go.testTimeout": "60s",
+  "go.coverOnSave": false,
+  "go.coverOnTestPackage": true,
+  "gopls": {
+    "ui.semanticTokens": true,
+    "ui.codelenses": {
+      "gc_details": true,
+      "run_govulncheck": true
+    },
+    "analyses": {
+      "unusedparams": true,
+      "shadow": true,
+      "fieldalignment": true
+    }
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.rulers": [100],
+  "editor.tabSize": 4,
+  "editor.insertSpaces": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.insertSpaces": false
+  },
+  "[go.mod]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/vendor": false
+  }
+}

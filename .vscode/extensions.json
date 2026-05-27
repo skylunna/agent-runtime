@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "golang.go",
+    "ms-vscode.makefile-tools",
+    "zxh404.vscode-proto3",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens"
+  ]
+}

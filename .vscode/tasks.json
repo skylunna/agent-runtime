@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "go build ./...",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "go test -v -race ./...",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "test: with coverage",
+      "type": "shell",
+      "command": "go test -v -race -coverprofile=coverage.out ./... && go tool cover -html=coverage.out",
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "vet",
+      "type": "shell",
+      "command": "go vet ./...",
+      "group": "build",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "problemMatcher": "$go"
+    },
+    {
+      "label": "tidy",
+      "type": "shell",
+      "command": "go mod tidy",
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "golangci-lint run ./...",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": {
+        "owner": "golangci-lint",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.+):(\\d+):(\\d+):\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      }
+    }
+  ]
+}

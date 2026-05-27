@@ -13,5 +13,4 @@ coverage.out
 
 # IDE / OS
 .idea/
-.vscode/
 .DS_Store
